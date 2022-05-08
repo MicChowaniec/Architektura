@@ -1,0 +1,51 @@
+Autor: Michał Chowaniec
+Nr indeksu 13897
+Grupa lab 2
+Na ocenę:
+
+
+Procesor
+Symulowanym procesorem, jest Intel 8086 – 16 bitowy mikroprocesor (Intel 1978).
+Specyfikacja:
+16-bitowa magistrala danych,
+20-bitowa magistrala adresowa,
+częstotliwość taktowania – do 10MHz,
+dwa tryby pracy – minimalny i maksymalny,
+16-bitowa jednostka arytmetyczno logiczna,
+16-bitowe rejestry ogólne,
+6-bajtowa kolejka rozkazów,
+7 trybów adresowania ,
+64kB przestrzeni adresowej urządzeń wejścia/wyjścia
+Architektura:
+Jednostka wykonawcza EU składa się z bloku rejestrów ogólnego przeznaczenia, czyli 16-bitowa jednostka arytmetyczno-logiczna AU, wraz z rejestrem znaczników(SF, ZF,PF,AF,CF,OF,IF,DF,TF)  oraz blok rejestrów ogólnego przeznaczenia: rejestry arytmetyczne(AX,BX,CX,DX), indeksowe(SI,DI) i wskaźnikowe(SP,BP))
+
+Jednostka interfejsowa składa się z bloku rejestrów segmentowych(CS, DS, DS, ES), licznika rozkazów (IP), generatora adresu fizycznego (20bitowy sumator)(może warto wyświetlić jego wartość w programie), 6 jednobajtowych komórek pamięci zorganizowanych w słowa (kolejka rozkazów), 
+
+
+
+Rejestry
+Adresowanie w procesorze realizowane jest przez odpowiedni rozkaz.
+Jeżeli rozkaz jest wielobajtowy, drugi bajt rozkazu określa sposób adresowania argumentów
+ 
+ 
+Aplikacja
+Aplikacja wykorzystuje WPF +C#...(rozwinąć)
+Tryb pisania/Tryb wybierania – Przycisk pozwala na przełączanie pomiędzy trybem pisania a wybierania.
+Przycisk „Random” pozwala na wygenerowanie losowych wartości w polach AX, BX, CX, DX, BP, DI, SI oraz Offset(sprawdzić).
+Przycisk „Reset” pozwala na wyzerowanie wszystkich pól.
+Przycisk „M Push” pozwala na wybranie opcji zapisu w pamięci.
+Przycisk „M Pop” pozwala na wybranie opcji odczytu z pamięci.
+Pole wyboru adresowania: pozwala wybrać pomiędzy adresowaniem indeksowym, indeksowo bazowym i indeksowaniem bazowym.
+Panel przycisków rozkazów:
+-zawiera rozkazy:
+-MOV -> (domyślny) (OPISAĆ, ALBO ZMIENIĆ)
+-MOV <-
+-XCHG 
+-tryby pracy:
+Tryb pisania – pozwala na ręczne wprowadzanie wartości do komórek w systemie hex(rozwinąć).
+Tryb wybierania(domyślny) – pozwala na wybór dwóch komórek (lub jednej komórki i trybu pamięci) aby aktywować przyciski poleceń (może lepiej zrobić listy rozwijane?)
+-pamięć
+Pamięć de facto jest realizowana w postaci stosu, do jej obsługi służą przyciski „M Push” (jako zapis), oraz „M Pop” (jako odczyt). Stos zapamiętuje informację przekazaną do pamięci, oraz informację „adresu” komórki pamięci. (BP lub BX – adresy bazowe), (SI, DI – adresy indeksowe), (BP+SI, BP+DI, BX+SI, BX+DI) – adresy rejestrowo bazowe. Osobna kolumna pozwala dodać OFFSET.
+-polecenia symulowane
+Aplikacja pozwala wybrać komórkę z której wychodzi polecenie, oraz komórkę docelową, oraz komendę MOV, XCHG, lub komórkę pamięci przy czym realizuje następujące 
+-informacje na temat symulatora
